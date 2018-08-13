@@ -8,15 +8,15 @@ random process). HS structures can be useful when someone wants to classify them
 from any database.
  
 ## Instalation
-###Prerequisities
-####Supported platforms:
+### Prerequisities
+#### Supported platforms:
 * Linux 64-bit (as molpher-lib is compiled only for it, but otherwise the package is platform independent)
 
-####Dependencies
+#### Dependencies
 * RDKit
 * Molpher-lib >=0.0.0b2 (now it works with RDKit 2018.3.1 and libboost 1.65.1)
 
-###Installation with Anaconda
+### Installation with Anaconda
 Nonpher is distributed as a conda package. At the moment, this is the preferred way to install and use the library.
 All you need to do is get the full Anaconda distribution or its lightweight variant, Miniconda. It is essentially a
 Python distribution, package manager and virtual environment in one and makes setting up a development environment
@@ -26,7 +26,7 @@ the Linux terminal:
 conda install -c rdkit -c lich nonpher
 ```
 
-###Installation with setup.py
+### Installation with setup.py
 Anyway you have installed RDKit and Molpher-lib, you can download/clone Nonpher and install it 
 from its directory with:
 ```bash
