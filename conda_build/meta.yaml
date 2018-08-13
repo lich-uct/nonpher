@@ -1,0 +1,38 @@
+package:
+  name: nonpher
+  version: "1.0.0"
+
+build:
+  noarch: python
+
+extra:
+  channels:
+    - rdkit
+    - lich
+
+source:
+  path: ../
+  #git_rev: latest
+  #git_url: file:///home/milan/workspace/nonpher
+
+requirements:
+  build:
+      - python
+      - setuptools
+
+
+  run:
+      - python
+      - rdkit
+      - molpher-lib >=0.0.0b2
+      - libboost =1.65 # rdkit 2018.3.1 is build against but it is not required
+
+# test:
+#  imports:
+#    - nonpher
+
+about:
+  home: https://github.com/lich-uct/nonpher
+  license: GPL-3.0
+  license_file: LICENSE
+  summary: "Software library for designing hard-to-synthesize structures"
