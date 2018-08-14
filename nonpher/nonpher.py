@@ -139,12 +139,19 @@ def complex_nonpher(smiles, max_steps=30, complexity_filter=ComplexityFilter()):
 if __name__ == "__main__":
     import argparse
     import sys
-    parser = argparse.ArgumentParser(description="Who knows")
-    parser.add_argument('-H', "--header", action='store_true')
-    parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
-    parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
+    parser = argparse.ArgumentParser(description="Nonpher is software for generating hard-to-synthesize structures from"
+                                                 " starting material.")
+    parser.add_argument('-H', "--header", action='store_true', help="skip first line but use it as a header for output"
+                                                                    " file.")
+    parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
+                        help="path to an input csv file in the format of 'ID,SMILES'. When no file is provided, input "
+                             "is expected to be given through STDIN.")
+    parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout,
+                        help="path to output file, otherwise STDOUT is used.")
     args = parser.parse_args()
+
     inp = args.infile
+
     with args.outfile as out:
         if args.header:
             header = inp.readline()
@@ -154,5 +161,4 @@ if __name__ == "__main__":
             spls = line.strip().split(",")
             idx, smi = spls[:2]
             morph = complex_nonpher(smi)
-            if morph:
-                out.write("%s,%s,%s\n" % (idx, smi, morph))
+            out.write("%s,%s,%s\n" % (idx, smi, morph if morph else ""))

@@ -42,7 +42,7 @@ specify output file which will be in the same format: ID, SOURCE_STRUCTURE and g
 To run the script just write: 
 
 ```bash
-python -m nonpher.nonpher [-H] [INPUT_FILE [OUTPUT_FILE]]
+python -m nonpher.nonpher [-h] [-H] [INPUT_FILE [OUTPUT_FILE]]
 ```
 
 where parameter -H is for skipping the first line (header)
