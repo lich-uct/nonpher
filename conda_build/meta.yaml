@@ -1,9 +1,14 @@
+{% set data = load_setup_py_data() %}
+
 package:
   name: nonpher
-  version: "1.0.0"
+  version: {{ data.get('version') }}
 
 build:
   noarch: python
+#  always_include_files:
+#    - bin/nonpher.sh
+  preserve_egg_dir: True
 
 extra:
   channels:
@@ -12,8 +17,8 @@ extra:
 
 source:
   path: ../
-  #git_rev: latest
-  #git_url: file:///home/milan/workspace/nonpher
+#  git_rev: latest
+#  git_url: file:///home/milan/workspace/nonpher
 
 requirements:
   build:
@@ -25,7 +30,6 @@ requirements:
       - python
       - rdkit
       - molpher-lib >=0.0.0b2
-      - libboost =1.65 # rdkit 2018.3.1 is build against but it is not required
 
 # test:
 #  imports:

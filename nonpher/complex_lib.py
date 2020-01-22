@@ -248,7 +248,12 @@ def SMCM(m):
     for a in ats:
         if a.GetAtomicNum()==6:
             c+=1
-        a_score += _SMCM_ENs[a.GetAtomicNum()]
+        if a.GetAtomicNum() in _SMCM_ENs:
+            a_score += _SMCM_ENs[a.GetAtomicNum()]
+        else:
+            a_score += 1
+            # TODO log it or print this in the same way as RDKit
+            print("Unsupported atom #{}".format(a.GetAtomicNum()))
         
     b_score = 0
     for b in bonds:
