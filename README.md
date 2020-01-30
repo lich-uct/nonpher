@@ -14,11 +14,14 @@ and Nonpher in Voršilák M and Svozil D., J. Cheminform. 2017 Mar 20;9(1):20 [h
 
 #### Dependencies
 * RDKit
-* Molpher-lib >=0.0.0b2 (now it works with RDKit 2018.3.1 and libboost 1.65.1)
+* Molpher-lib >=0.0.0b2
+
+For conda installation due to some issues between packages, Molpher-lib is fixed to 0.0.0b2, RDKit to 2018.3.1 and libboost to 1.65.1.
+With newer or development version of Molpher-lib, these requirments are not so strict.
 
 ### Installation with Anaconda
 Nonpher is distributed as a conda package. At the moment, this is the preferred way to install and use the library.
-All you need to do is get the full Anaconda[ODKAZ] distribution or its lightweight variant, Miniconda[https://docs.conda.io/en/latest/miniconda.html].
+All you need to do is get the full Anaconda[https://www.anaconda.com/] distribution or its lightweight variant, Miniconda[https://docs.conda.io/en/latest/miniconda.html].
 It is essentially a Python distribution, package manager and virtual environment in one and makes setting up a development environment for any project very easy.
 After installing Anaconda/Miniconda (and environment preparing) you can run the following in the Linux terminal:
 ```bash
@@ -48,6 +51,7 @@ nonpher.py [-h] [-H] [INPUT_FILE [OUTPUT_FILE]]
 ```
 
 ## Usage in Python
-```bash
-import nonpher
+```python
+from nonpher import nonpher
+morph = nonpher.complex_nonpher("O=C(C)Oc1ccccc1C(=O)O")
 ```
