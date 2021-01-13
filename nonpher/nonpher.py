@@ -136,7 +136,7 @@ def complex_nonpher(smiles, max_steps=30, complexity_filter=ComplexityFilter()):
     return None
 
 
-if __name__ == "__main__":
+def main():
     import argparse
     import sys
     parser = argparse.ArgumentParser(description="Nonpher is software for generating hard-to-synthesize structures from"
@@ -162,3 +162,7 @@ if __name__ == "__main__":
             idx, smi = spls[:2]
             morph = complex_nonpher(smi)
             out.write("%s,%s,%s\n" % (idx, smi, morph if morph else ""))
+
+
+if __name__ == "__main__":
+    main()
