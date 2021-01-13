@@ -40,14 +40,14 @@ The input for the Nonpher is a CSV file each line of which consists of input com
 The output CSV file contains input compound ID, input compound SMILES and output HS compound SMILES.
 The script is issued by the following command:
 ```bash
-python -m nonpher.nonpher [-h] [-H] [INPUT_FILE [OUTPUT_FILE]]
+$ nonpher [-h] [-H] [INPUT_FILE [OUTPUT_FILE]]
 ```
 
 where parameter -H instructs the script to skipping the first line (header) of the input CSV file.
 
 Naturally in/with the right path (where you downloaded Nonpher [NONPHER_REPOSITORY/nonpher]), you can use:
 ```bash
-nonpher.py [-h] [-H] [INPUT_FILE [OUTPUT_FILE]]
+python nonpher.py [-h] [-H] [INPUT_FILE [OUTPUT_FILE]]
 ```
 
 ## Usage in Python
