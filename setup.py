@@ -10,4 +10,9 @@ setup(name='nonpher',
       packages=['nonpher',], # 'molpher-lib', 'rdkit'],
       zip_safe=False,
       include_package_data=True,
+      entry_points={
+          'console_scripts': [
+              'nonpher = nonpher.nonpher:main',
+          ],
+      },
      )
